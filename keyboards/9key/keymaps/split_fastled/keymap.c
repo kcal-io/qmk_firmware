@@ -1,4 +1,5 @@
 #include "9key.h"
+#include "fastled_entry.h"
 
 // Tap Dance Declarations
 enum {
@@ -62,4 +63,9 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 };
 
 void matrix_init_user(void) {
+  fastled_init();
+}
+
+void matrix_scan_user(void) {
+  fastled_update();
 }

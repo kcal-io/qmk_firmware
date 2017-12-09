@@ -1,6 +1,7 @@
-## Updating QMK Core:
+## Updating QMK Core and Submodules:
 ```
 get pull https://github.com/qmk/qmk_firmware.git master
+git submodule update --recursive --remote
 git status
 git add -A
 git commit -m "Updating to latest version of QMK"
@@ -11,5 +12,14 @@ This is probably not the best method as it brings in a lot of unnecessary code. 
 ```
 git submodule add https://github.com/FastLED/FastLED lib/FastLED
 git submodule add https://github.com/arduino/Arduino.git lib/Arduino
-git submodule add https://github.com/sparkfun/Arduino_Boards.git Sparkfun
+git submodule add https://github.com/sparkfun/Arduino_Boards.git lib/Sparkfun
+```
+
+## Required Patching
+### Arduino_patched.h
+The function definition needed to be changed for atexit in Arduino.h for wiring.h to compile.  TODO, script to do this automatically.
+
+## Bulding
+```
+make 9key/split_fastled
 ```
