@@ -11,3 +11,12 @@
 [submodule "lib/googletest"]
 	path = lib/googletest
 	url = https://github.com/google/googletest
+[submodule "lib/FastLED"]
+	path = lib/FastLED
+	url = https://github.com/FastLED/FastLED
+[submodule "lib/Arduino"]
+	path = lib/Arduino
+	url = https://github.com/arduino/Arduino.git
+[submodule "Sparkfun"]
+	path = Sparkfun
+	url = https://github.com/sparkfun/Arduino_Boards.git
