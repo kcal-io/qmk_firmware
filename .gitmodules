@@ -20,3 +20,6 @@
 [submodule "Sparkfun"]
 	path = Sparkfun
 	url = https://github.com/sparkfun/Arduino_Boards.git
+[submodule "lib/Sparkfun"]
+	path = lib/Sparkfun
+	url = https://github.com/sparkfun/Arduino_Boards.git
