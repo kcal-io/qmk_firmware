@@ -1,6 +1,6 @@
 ## Updating QMK Core and Submodules:
 ```
-get pull https://github.com/qmk/qmk_firmware.git master
+git pull https://github.com/qmk/qmk_firmware.git master
 git submodule update --recursive --remote
 git status
 git add -A
@@ -17,9 +17,17 @@ git submodule add https://github.com/sparkfun/Arduino_Boards.git lib/Sparkfun
 
 ## Required Patching
 ### Arduino_patched.h
-The function definition needed to be changed for atexit in Arduino.h for wiring.h to compile.  TODO, script to do this automatically.
+The function definition needed to be changed for atexit in Arduino.h for wiring.c to compile.  TODO, new timer or script to do this automatically.
 
 ## Bulding
 ```
 make 9key/split_fastled
 ```
+
+## Gallery
+<<<<<<< HEAD
+https://i.imgur.com/Xw7YlS9.jpg
+=======
+![Testing photo of 144 RGB LEDs off a promicro running QMK and FastLED](gallery/testing.jpg?raw=true)
+
+>>>>>>> 602429dd9... Photo of a test

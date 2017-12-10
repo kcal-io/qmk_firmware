@@ -1,6 +1,6 @@
 #define FASTLED_HAS_MILLIS
 
-// Undef conficting defintions from config_common.h that is globally included
+// Undef conflicting definitions from config_common.h that is globally included
 #ifdef F0
     #undef B0 
     #undef B1 

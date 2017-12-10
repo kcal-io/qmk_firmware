@@ -13,9 +13,9 @@ CRGB leds[NUM_LEDS];
 
 void fastled_init(void) {
   init();
-  FastLED.setMaxPowerInVoltsAndMilliamps(5,400);
+  //FastLED.setMaxPowerInVoltsAndMilliamps(5,400);
   FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS);
-  FastLED.setBrightness(20);
+  FastLED.setBrightness(40);
 }
 
 void fastled_update(void) {
