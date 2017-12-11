@@ -17,6 +17,7 @@ VPATH += $(FASTLED_PATH) \
 				 $(SPARKFUN_PATH)
 
 SRC += fastled_entry.cpp \
+			 timer3.cpp \
 			 bootstrap/_FastLED.cpp \
 			 bootstrap/_bitswap.cpp \
 			 bootstrap/_colorpalettes.cpp \
@@ -24,6 +25,4 @@ SRC += fastled_entry.cpp \
 			 bootstrap/_hsv2rgb.cpp \
 			 bootstrap/_lib8tion.cpp \
 			 bootstrap/_noise.cpp \
-			 bootstrap/_power_mgt.cpp \
-			 bootstrap/_wiring.c
-
+			 bootstrap/_power_mgt.cpp

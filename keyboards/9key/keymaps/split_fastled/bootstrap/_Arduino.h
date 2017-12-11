@@ -52,7 +52,7 @@
     #undef A7 
 #endif
 
-#ifndef __AVR_ATmega32U4__
+#ifndef __AVR_ATmega32U4_
 #define __AVR_ATmega32U4__
 #endif
 

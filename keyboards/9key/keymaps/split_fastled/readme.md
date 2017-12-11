@@ -15,9 +15,8 @@ git submodule add https://github.com/arduino/Arduino.git lib/Arduino
 git submodule add https://github.com/sparkfun/Arduino_Boards.git lib/Sparkfun
 ```
 
-## Required Patching
-### Arduino_patched.h
-The function definition needed to be changed for atexit in Arduino.h for wiring.c to compile.  TODO, new timer or script to do this automatically.
+## Timer
+Timer3 is used to implement micros, millis, and delay functions expected by the Arduino/FastLED environment so it does not conflict with Timer0 used by QMK.
 
 ## Bulding
 ```
@@ -25,9 +24,5 @@ make 9key/split_fastled
 ```
 
 ## Gallery
-<<<<<<< HEAD
 https://i.imgur.com/Xw7YlS9.jpg
-=======
-![Testing photo of 144 RGB LEDs off a promicro running QMK and FastLED](gallery/testing.jpg?raw=true)
 
->>>>>>> 602429dd9... Photo of a test
