@@ -11,33 +11,19 @@
 #define FRACT_INC ((MICROSECONDS_PER_TIMER0_OVERFLOW % 1000) >> 3)
 #define FRACT_MAX (1000 >> 3)
 
+// backwards compatibility with FastLED expecting Timer0
+volatile unsigned long timer0_millis = 0; 
+
 #define timer3_millis timer0_millis
-volatile unsigned long timer0_millis = 0; // for backwards compatibility with FastLED expecting timer0
 volatile unsigned long timer3_overflow_count = 0;
 static unsigned char timer3_fract = 0;
 
 void timer3_init(void) {
-
   TCCR3A = 0;
 	TCCR3B = _BV(CS31) | _BV(CS30);
 	TIMSK3 = _BV(TOIE3);
+
 	sei();
-}
-
-ISR(TIMER3_OVF_vect) {
-	unsigned long m = timer3_millis;
-	unsigned char f = timer3_fract;
-
-	m += MILLIS_INC;
-	f += FRACT_INC;
-	if (f >= FRACT_MAX) {
-		f -= FRACT_MAX;
-		m += 1;
-	}
-
-	timer3_fract = f;
-	timer3_millis = m;
-	timer3_overflow_count++;
 }
 
 unsigned long millis() {
@@ -78,4 +64,20 @@ void delay(unsigned long ms) {
 			start += 1000;
 		}
 	}
+}
+
+ISR(TIMER3_OVF_vect) {
+	unsigned long m = timer3_millis;
+	unsigned char f = timer3_fract;
+
+	m += MILLIS_INC;
+	f += FRACT_INC;
+	if (f >= FRACT_MAX) {
+		f -= FRACT_MAX;
+		m += 1;
+	}
+
+	timer3_fract = f;
+	timer3_millis = m;
+	timer3_overflow_count++;
 }

@@ -2,9 +2,7 @@
 ```
 git pull https://github.com/qmk/qmk_firmware.git master
 git submodule update --recursive --remote
-git status
-git add -A
-git commit -m "Updating to latest version of QMK"
+git push origin master
 ```
 
 ## Adding Libraries for the Keymap:
